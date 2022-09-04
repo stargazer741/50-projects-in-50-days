@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.container h1 {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.container a {
+  text-decoration: none;
+  color: lightseagreen;
+}
+
+
+.btn {
+    cursor: pointer;
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    width: 100%;
+    padding: 15px;
+    border:  0;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    font-family: inherit;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(.98);
+    outline: 0;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: whitesmoke;
+    transition: all 0.5s ease-in-out;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: #0ba360;
+}
+
+.text {
+    margin-top: 30px;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: #0ba360;
+    transform: translateY(-30px);
+}
