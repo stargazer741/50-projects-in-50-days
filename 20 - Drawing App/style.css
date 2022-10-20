@@ -22,7 +22,7 @@ canvas {
 }
 
 .toolbox {
-    background-color: salmon;
+    background-color: slateblue;
     border: 2px solid grey;
     display: flex;
     width: 804px;
@@ -30,6 +30,7 @@ canvas {
 }
 
 .toolbox > * {
+    color: slateblue;
     background-color: #fff;
     border: none;
     display: inline-flex;
@@ -41,6 +42,10 @@ canvas {
     margin: 0.25rem;
     padding: 0.25rem;
     cursor: pointer;
+}
+
+.toolbox > *:active {
+    transform: scale(0.95);
 }
 
 .toolbox > *:last-child {

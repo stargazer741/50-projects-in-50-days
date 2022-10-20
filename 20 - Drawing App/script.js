@@ -3,9 +3,11 @@ const ctx = canvas.getContext("2d");
 
 const increaseBtn = document.getElementById("increase");
 const decreaseBtn = document.getElementById("decrease");
+const saveBtn = document.getElementById("save");
 const sizeElement = document.getElementById("size");
 const colorElement = document.getElementById("color");
 const clearElement = document.getElementById("clear");
+
 
 let size = 20;
 colorElement.value = "black";
@@ -89,3 +91,18 @@ colorElement.addEventListener("change", (e) => {
 clearElement.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
+
+saveBtn.addEventListener("click", function () {
+  /* IE and Edge */
+  if(window.navigator.msSaveBlob) {
+    window.navigator.msSaveBlob(canvas.msToBlob(), "image-export.png");
+  } else { /* chrome and the others */
+    const a = document.createElement("a");
+
+    document.body.appendChild(a);
+    a.href = canvas.toDataURL();
+    a.download = "image-export.png";
+    a.click();
+    document.body.removeChild(a);
+  }
+})
